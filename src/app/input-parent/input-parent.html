@@ -1,0 +1,72 @@
+<p>input-parent works!</p>
+<div class="container mt-5">
+  <div class="card shadow-sm">
+    <div class="card-header bg-primary text-white">
+      Parent Component
+    </div>
+
+    <div class="card-body">
+      <div class="mb-3">
+        <label class="form-label">
+          Employee Name
+        </label>
+
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="employeeName"
+        >
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">
+          Employee Role
+        </label>
+
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="employeeRole"
+        >
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">
+          Employee Location
+        </label>
+
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="employeeLocation"
+        >
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">
+          Employee Email
+        </label>
+
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="employeeEmail"
+        >
+      </div>
+
+      <app-input-child
+        [traditionalEmployeeName]="employeeName"
+        [signalEmployeeName]="employeeName"
+
+        [traditionalEmployeeRole]="employeeRole"
+        [signalEmployeeRole]="employeeRole"
+
+        [traditionalEmployeeLocation]="employeeLocation"
+        [signalEmployeeLocation]="employeeLocation"
+
+        [traditionalEmployeeEmail]="employeeEmail"
+        [signalEmployeeEmail]="employeeEmail">
+      </app-input-child>
+    </div>
+  </div>
+</div>

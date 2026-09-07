@@ -1,0 +1,70 @@
+<div class="row mt-4">
+
+  <!-- Traditional @Input() result -->
+  <div class="col-md-6">
+    <div class="card border-primary h-100">
+      <div class="card-header bg-primary text-white">
+        Traditional @Input()
+      </div>
+
+      <div class="card-body">
+        <p>
+          <strong>Employee Name:</strong>
+          {{ traditionalEmployeeName }}
+        </p>
+
+        <p>
+          <strong>Employee Role:</strong>
+          {{ traditionalEmployeeRole }}
+        </p>
+
+        <p>
+          <strong>Employee Location:</strong>
+          {{ traditionalLocation }}
+        </p>
+
+        <p class="mb-0">
+          <strong>Employee Email:</strong>
+          {{ traditionalEmail }}
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modern input() result -->
+  <div class="col-md-6">
+    <div class="card border-success h-100">
+      <div class="card-header bg-success text-white">
+        Modern input()
+      </div>
+
+      <div class="card-body">
+        <p>
+          <strong>Employee Name:</strong>
+          {{ signalEmployeeName() }}
+        </p>
+
+        <p>
+          <strong>Employee Role:</strong>
+          {{ signalEmployeeRole() }}
+        </p>
+
+        <p>
+          <strong>Employee Location:</strong>
+          {{ signalLocation() }}
+        </p>
+
+        <p>
+          <strong>Employee Email:</strong>
+          {{ signalEmail() }}
+        </p>
+
+        <div class="alert alert-success mb-0">
+          <strong>Computed Summary:</strong>
+          {{ signalEmployeeSummary() }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
+import { InputParent } from './input-parent/input-parent';
+
 @Component({
-  imports: [],
   selector: 'app-root',
-  styleUrl: './app.css',
+  imports: [InputParent],
   templateUrl: './app.html',
+  styleUrl: './app.css'
 })
 export class App {
-
 }
