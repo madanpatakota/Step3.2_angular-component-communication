@@ -1,0 +1,32 @@
+<div class="container mt-5">
+  <div class="card shadow-sm">
+    <div class="card-header bg-primary text-white">
+      Parent Component
+    </div>
+
+    <div class="card-body">
+      <app-output-child
+        (traditionalEmployeeAction)="receiveTraditionalOutput($event)"
+        (modernEmployeeAction)="receiveModernOutput($event)">
+      </app-output-child>
+
+      <div class="row mt-4">
+        <div class="col-md-6">
+          <div class="alert alert-primary mb-0">
+            <strong>@Output() Message:</strong>
+            <br>
+            {{ traditionalMessage }}
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="alert alert-success mb-0">
+            <strong>output() Message:</strong>
+            <br>
+            {{ modernMessage }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

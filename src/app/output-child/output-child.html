@@ -1,0 +1,39 @@
+<div class="card border-success">
+  <div class="card-header bg-success text-white">
+    Child Component – @Output() vs output()
+  </div>
+
+  <div class="card-body">
+    <div class="border-bottom pb-3 mb-3">
+      <h5>@Output() + EventEmitter</h5>
+
+      <!--
+        Child button click
+        → sendTraditionalOutput()
+        → traditionalEmployeeAction.emit(...)
+        → parent receives $event
+      -->
+      <button
+        class="btn btn-primary"
+        (click)="sendTraditionalOutput()">
+        Send Using @Output()
+      </button>
+    </div>
+
+    <div>
+      <h5>output()</h5>
+
+      <!--
+        Child button click
+        → sendModernOutput()
+        → modernEmployeeAction.emit(...)
+        → parent receives $event
+      -->
+      <button
+        class="btn btn-success"
+        (click)="sendModernOutput()">
+        Send Using output()
+      </button>
+    </div>
+  </div>
+</div>

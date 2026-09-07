@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
+import { OutputParent } from './output-parent/output-parent';
+
 @Component({
-  imports: [],
   selector: 'app-root',
-  styleUrl: './app.css',
+  imports: [OutputParent],
   templateUrl: './app.html',
+  styleUrl: './app.css'
 })
 export class App {
-
 }
