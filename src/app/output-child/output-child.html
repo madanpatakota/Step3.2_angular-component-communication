@@ -1,39 +1,91 @@
-<div class="card border-success">
-  <div class="card-header bg-success text-white">
-    Child Component – @Output() vs output()
+<div class="card border-secondary">
+
+  <div class="card-header bg-secondary text-white">
+    <i class="bi bi-phone me-2"></i>
+    Child Component – Message Sender
   </div>
 
   <div class="card-body">
-    <div class="border-bottom pb-3 mb-3">
-      <h5>@Output() + EventEmitter</h5>
+    <div class="row g-4">
 
-      <!--
-        Child button click
-        → sendTraditionalOutput()
-        → traditionalEmployeeAction.emit(...)
-        → parent receives $event
-      -->
-      <button
-        class="btn btn-primary"
-        (click)="sendTraditionalOutput()">
-        Send Using @Output()
-      </button>
-    </div>
+      <!-- Traditional @Output() example -->
+      <div class="col-md-6">
+        <div class="border rounded p-3 h-100">
 
-    <div>
-      <h5>output()</h5>
+          <h5 class="text-primary">
+            <i class="bi bi-send me-2"></i>
+            Send using @Output()
+          </h5>
 
-      <!--
-        Child button click
-        → sendModernOutput()
-        → modernEmployeeAction.emit(...)
-        → parent receives $event
-      -->
-      <button
-        class="btn btn-success"
-        (click)="sendModernOutput()">
-        Send Using output()
-      </button>
+          <label class="form-label">
+            Type a message from Child Component
+          </label>
+
+          <!--
+            User types a message.
+            [(ngModel)] updates traditionalMessageText.
+          -->
+          <textarea
+            class="form-control mb-3"
+            rows="3"
+            [(ngModel)]="traditionalMessageText">
+          </textarea>
+
+          <!--
+            Button click:
+            sendTraditionalOutput()
+            → EventEmitter.emit(message)
+            → Parent receives $event
+          -->
+          <button
+            class="btn btn-primary w-100"
+            (click)="sendTraditionalOutput()">
+
+            <i class="bi bi-send-fill me-2"></i>
+            Send Message to Parent
+          </button>
+        </div>
+      </div>
+
+      <!-- Modern output() example -->
+      <div class="col-md-6">
+        <div class="border rounded p-3 h-100">
+
+          <h5 class="text-success">
+            <i class="bi bi-send me-2"></i>
+            Send using output()
+          </h5>
+
+          <label class="form-label">
+            Type a message from Child Component
+          </label>
+
+          <!--
+            User types a message.
+            [(ngModel)] updates modernMessageText.
+          -->
+          <textarea
+            class="form-control mb-3"
+            rows="3"
+            [(ngModel)]="modernMessageText">
+          </textarea>
+
+          <!--
+            Button click:
+            sendModernOutput()
+            → output().emit(message)
+            → Parent receives $event
+          -->
+          <button
+            class="btn btn-success w-100"
+            (click)="sendModernOutput()">
+
+            <i class="bi bi-send-fill me-2"></i>
+            Send Message to Parent
+          </button>
+        </div>
+      </div>
+
     </div>
   </div>
 </div>

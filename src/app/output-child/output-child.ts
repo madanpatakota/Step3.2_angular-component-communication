@@ -5,64 +5,80 @@ import {
   output
 } from '@angular/core';
 
+import { FormsModule } from '@angular/forms';
+
 @Component({
   selector: 'app-output-child',
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './output-child.html',
   styleUrl: './output-child.css'
 })
 export class OutputChild {
 
   /*
-    ====================================
+    These values are bound to the textareas
+    using [(ngModel)].
+
+    The child will send these messages
+    to the parent when buttons are clicked.
+  */
+  traditionalMessageText =
+    'Employee check-in sent using @Output() and EventEmitter.';
+
+  modernMessageText =
+    'Employee check-in sent using output().';
+
+  /*
+    ======================================
     Traditional @Output() + EventEmitter
-    ====================================
+    ======================================
 
-    @Output() traditionalEmployeeAction =
-      new EventEmitter<string>();
+    @Output() exposes this event to the parent.
 
-    Parent listens like this:
-
-    (traditionalEmployeeAction)="
-      receiveTraditionalOutput($event)
-    "
+    EventEmitter<string> means this event
+    sends a string value.
   */
   @Output()
   traditionalEmployeeAction = new EventEmitter<string>();
 
   /*
-    ==========================
-    Modern output() Approach
-    ==========================
+    ==================
+    Modern output()
+    ==================
 
-    output<string>() returns OutputEmitterRef<string>.
+    output<string>() creates a modern
+    custom output event.
 
-    Parent listens in the same way:
+    It returns OutputEmitterRef<string>.
 
-    (modernEmployeeAction)="
-      receiveModernOutput($event)
-    "
-
-    output() is not a Signal.
-    It is Angular's modern API for custom events.
+    output() is NOT a Signal.
+    It is used for child-to-parent events.
   */
   modernEmployeeAction = output<string>();
 
   /*
-    Both APIs use emit() to send
-    data from child to parent.
-  */
+    This method runs when the user clicks
+    the @Output() Send button.
 
+    emit() sends the textarea message
+    from the child to the parent.
+  */
   sendTraditionalOutput() {
     this.traditionalEmployeeAction.emit(
-      'Employee check-in sent using @Output() and EventEmitter.'
+      this.traditionalMessageText
     );
   }
 
+  /*
+    This method runs when the user clicks
+    the output() Send button.
+
+    emit() sends the textarea message
+    from the child to the parent.
+  */
   sendModernOutput() {
     this.modernEmployeeAction.emit(
-      'Employee check-in sent using output().'
+      this.modernMessageText
     );
   }
-
 }
