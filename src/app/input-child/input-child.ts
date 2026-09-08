@@ -112,4 +112,14 @@ export class InputChild {
     return `${this.signalEmployeeName()} - ${this.signalEmployeeRole()}`;
   });
 
+
+  // Traditional boolean input
+@Input()
+traditionalEmployeeActive = false;
+
+// Signal boolean input
+signalEmployeeActive = input(false, {
+  alias: 'signalEmployeeActive'
+});
+
 }

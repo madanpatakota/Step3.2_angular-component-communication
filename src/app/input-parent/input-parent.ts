@@ -18,4 +18,6 @@ export class InputParent {
 
   employeeEmail = 'madan@misard.com';
 
+  isEmployeeActive = true;
+
 }

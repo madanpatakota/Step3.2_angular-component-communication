@@ -30,7 +30,7 @@
         >
       </div>
 
-      <div class="mb-3">
+      <!-- <div class="mb-3">
         <label class="form-label">
           Employee Location
         </label>
@@ -52,21 +52,34 @@
           class="form-control"
           [(ngModel)]="employeeEmail"
         >
-      </div>
+      </div> -->
 
-      <app-input-child
-        [traditionalEmployeeName]="employeeName"
-        [signalEmployeeName]="employeeName"
 
-        [traditionalEmployeeRole]="employeeRole"
-        [signalEmployeeRole]="employeeRole"
+      <div class="form-check mb-3">
+  <input
+    class="form-check-input"
+    type="checkbox"
+    id="employeeActive"
+    [(ngModel)]="isEmployeeActive"
+  >
 
-        [traditionalEmployeeLocation]="employeeLocation"
-        [signalEmployeeLocation]="employeeLocation"
+  <label class="form-check-label" for="employeeActive">
+    Employee is Active
+  </label>
+</div>
 
-        [traditionalEmployeeEmail]="employeeEmail"
-        [signalEmployeeEmail]="employeeEmail">
-      </app-input-child>
+     <app-input-child
+  [traditionalEmployeeName]="employeeName"
+  [signalEmployeeName]="employeeName"
+  [traditionalEmployeeRole]="employeeRole"
+  [signalEmployeeRole]="employeeRole"
+  [traditionalEmployeeLocation]="employeeLocation"
+  [signalEmployeeLocation]="employeeLocation"
+  [traditionalEmployeeEmail]="employeeEmail"
+  [signalEmployeeEmail]="employeeEmail"
+  [traditionalEmployeeActive]="isEmployeeActive"
+  [signalEmployeeActive]="isEmployeeActive">
+</app-input-child>
     </div>
   </div>
 </div>

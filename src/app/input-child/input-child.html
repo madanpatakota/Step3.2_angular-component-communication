@@ -27,6 +27,13 @@
           <strong>Employee Email:</strong>
           {{ traditionalEmail }}
         </p>
+
+        
+        <p class="mb-0">
+  <strong>Employee Status:</strong>
+  {{ traditionalEmployeeActive ? 'Active' : 'Inactive' }}
+</p>
+
       </div>
     </div>
   </div>
@@ -59,10 +66,21 @@
           {{ signalEmail() }}
         </p>
 
+        
+
+<p>
+  <strong>Employee Status:</strong>
+  {{ signalEmployeeActive() ? 'Active' : 'Inactive' }}
+</p>
+
         <div class="alert alert-success mb-0">
           <strong>Computed Summary:</strong>
           {{ signalEmployeeSummary() }}
         </div>
+
+
+
+
       </div>
     </div>
   </div>
